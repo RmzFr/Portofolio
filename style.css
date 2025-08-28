@@ -1,0 +1,74 @@
+:root {
+  --bg: #0f1020;
+  --bg2: #151734;
+  --text: #f6f7fb;
+  --muted: #b7b9c9;
+  --accent: #7c5cff;
+  --accent2: #00e6ff;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; margin:0; padding:0 }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, var(--bg), var(--bg2));
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+nav {
+  position: sticky; top:0; z-index: 50;
+  background: rgba(15,16,32,.7);
+  backdrop-filter: blur(8px);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 24px;
+}
+nav .brand { font-weight: 800; font-size: 20px; }
+nav ul { display: flex; gap: 18px; list-style: none; }
+nav ul li a { color: var(--text); text-decoration: none; font-weight: 600; }
+
+/* --- Hero --- */
+header {
+  min-height: 90vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 40px 20px;
+}
+header h1 { font-size: clamp(32px,6vw,56px); margin-bottom: 16px; }
+header p { max-width: 600px; color: var(--muted); margin-bottom: 28px; }
+.cta {
+  padding: 14px 22px; border-radius: 14px;
+  background: linear-gradient(120deg,var(--accent),var(--accent2));
+  border: none; color:white; font-weight:700; cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .2s;
+}
+.cta:hover { transform: translateY(-3px); }
+
+/* --- Section --- */
+section { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+section h2 { font-size: 32px; margin-bottom: 20px; text-align: center; }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+.card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 20px; text-align: center;
+  box-shadow: var(--shadow);
+  transform: translateY(20px);
+  opacity: 0; transition: .6s;
+}
+.card.visible { transform: translateY(0); opacity: 1; }
+.card h3 { margin: 12px 0; }
+.card p { color: var(--muted); }
+
+/* --- Contact --- */
+form { display: grid; gap: 12px; max-width: 500px; margin: auto; }
+input, textarea { padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.08); color: white; }
+button { padding: 12px; border-radius: 10px; border: none; background: linear-gradient(120deg,var(--accent),var(--accent2)); color:white; font-weight:700; cursor:pointer; }
+
+footer { text-align: center; padding: 40px 20px; color: var(--muted); }
+
+/* --- Animations --- */
+@keyframes float { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-10px);} }
+.floating { animation: float 6s ease-in-out infinite; }

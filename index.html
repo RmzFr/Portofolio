@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio · Rmz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="brand">Rmz · Portfolio</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#works">Mes Travaux</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1 class="floating">Salut, moi c'est Rmz 👋</h1>
+    <p>Je crée des <strong>bannières</strong>, <strong>logos</strong>, <strong>miniatures</strong> et <strong>GFX</strong> uniques et modernes pour donner un style professionnel à ton contenu.</p>
+    <button class="cta" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Voir mes services ↓</button>
+  </header>
+
+  <section id="services">
+    <h2>💼 Mes Services</h2>
+    <div class="grid">
+      <div class="card"><h3>Bannières</h3><p>Designs YouTube, Twitch, Twitter, adaptés à ta personnalité et ton univers.</p></div>
+      <div class="card"><h3>Logos</h3><p>Identité visuelle forte et mémorable avec des logos modernes et créatifs.</p></div>
+      <div class="card"><h3>Miniatures</h3><p>Miniatures YouTube/Gaming attractives qui donnent envie de cliquer.</p></div>
+      <div class="card"><h3>GFX</h3><p>Visuels graphiques 3D/2D pour donner du style à ton contenu.</p></div>
+    </div>
+  </section>
+
+  <section id="works">
+    <h2>🎨 Mes Réalisations</h2>
+    <div class="card">
+  <img src="assets/bannière1.png" alt="Bannière" class="img-fluid" alt="Bannière" width="200" height="auto">
+  <h3>Bannière pour un exemple</h3>
+  <p>Cette bannière est pour un petit test pour vous montrer qu'es que je peut vous faire !</p>
+</div>
+<div class="card">
+  <img src="assets/logo1.png" alt="Logo" class="img-fluid" alt="Logo" width="200" height="auto">
+  <h3>Logo pour un exemple</h3>
+  <p>Ce logo est pour un petit test pour vous montrer qu'es que je peut vous faire !</p>
+</div>
+<div class="card">
+  <img src="assets/gfx1.png" alt="Gfx" class="img-fluid" alt="Gfx" width="200" height="auto">
+  <h3>Gfx pour un exemple</h3>
+  <p>Cette Gfx est pour un petit test pour vous montrer qu'es que je peut vous faire !</p>
+</div>
+<div class="card">
+  <img src="assets/miniature1.png" alt="Miniature" class="img-fluid" alt="Miniature" width="200" height="auto">
+  <h3>Miniature pour un exemple</h3>
+  <p>Cette miniature est pour un petit test pour vous montrer qu'es que je peut vous faire !</p>
+</div>
+  </section>
+
+  <section id="contact">
+    <h2>📩 Contact</h2>
+    <form action="https://formsubmit.co/rmz.tkv@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Ton nom" required>
+      <input type="email" name="email" placeholder="Ton email" required>
+      <textarea name="message" rows="5" placeholder="Ton message"></textarea>
+      <button type="submit">Envoyer</button>
+   <section id="contact">
+  </form>
+  <p>Ou contacte-moi directement sur Discord : <strong>rmzfr</strong></p>
+</section>
+
+   <footer>
+  © <span id="year"></span> Rmz · Tous droits réservés.
+  <br>
+  Discord : <a href="https://discord.com/users/rmzfr" target="_blank">rmzfr</a>
+</footer>
+
+  <script>
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting));
+    }, { threshold:.1 });
+    document.querySelectorAll('.card').forEach(el => io.observe(el));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
